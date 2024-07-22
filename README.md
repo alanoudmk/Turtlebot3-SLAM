@@ -6,7 +6,7 @@
 Enviorment:
   - ROS Distro: Noetic 20.04
   - OS  Version: Ubuntu 20.04.6
-  - [Turtlebot3](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/).
+  - [Turtlebot3](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/) Robot.
   - Using Gazibo Simulation
 
 
@@ -18,10 +18,10 @@ Turtlebot3 is an open-source autonomous mobile robot platform designed for resea
 
 The Turtlebot3 is a small, lightweight, and affordable robot that can be easily customized and used for various robotics applications, such as:
 
-- **Navigation and mapping**: equipped with sensors like LiDAR, cameras, IMUs to navigate and map its environment.
-- **Autonomous exploration**: programmed to autonomously explore and navigate through indoor and outdoor environments.
-- **Human-robot interaction**: used to develop applications that involve interaction with humans, e.g. remote telepresence.
-- **Research and development**: The open-source nature of the Turtlebot3 allows researchers and developers to modify and experiment with the robot's hardware and software.
+- **Navigation and mapping**
+- **Autonomous exploration**
+- **Human-robot interaction**
+- **Research and development**
 
   
 ***
