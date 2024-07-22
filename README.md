@@ -6,7 +6,7 @@
 Enviorment:
   - ROS Distro: Noetic 20.04
   - OS  Version: Ubuntu 20.04.6
-  - [Arduino Robot Arm](https://github.com/smart-methods/arduino_robot_arm) Package
+  - [Turtlebot3]([https://github.com/smart-methods/arduino_robot_arm](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/).
   - Using Gazibo Simulation
 
 
@@ -269,3 +269,77 @@ When the map is created successfully:
 ```
 
 > The saved map.pgm file
+
+
+***
+
+# Navigation Simulation
+Just like the SLAM in Gazebo simulator, you can select or create various environments and robot models in [virtual Navigation world](https://emanual.robotis.com/docs/en/platform/turtlebot3/nav_simulation/).
+
+Proper map has to be prepared before running the Navigation. Other than preparing simulation environment instead of bringing up the robot, Navigation Simulation is pretty similar to that of Navigation.
+
+### 1. Launch Simulation World
+
+1. Terminate all applications:
+  > Ctrl + C 
+
+2. Launch Simulation World
+ - In the previous SLAM section, TurtleBot3 World is used to creat a map. The same Gazebo environment will be used for Navigation.
+ - Please use the proper keyword among ``burger``, ``waffle``, ``waffle_pi`` for the TURTLEBOT3_MODEL parameter.
+ 
+```
+  $ export TURTLEBOT3_MODEL=burger
+  $ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+```
+
+
+### 2. Run Navigation Node
+
+1. Open a **Terminal** & Source the ROS 1 Noetic: 
+   > Ctrl + Alt + T
+```
+  $ source /opt/ros/noetic/setup.bash
+```
+
+2. Run Navigation Node:
+```
+  $ export TURTLEBOT3_MODEL=burger
+  $ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/map.yaml
+```
+
+
+### 3. Estimate Initial Pose
+
+- Initial Pose Estimation
+  - must be performed before running the Navigation as this process initializes the AMCL parameters that are critical in Navigation.
+  - TurtleBot3 has to be correctly located on the map with the LDS sensor data that neatly overlaps the displayed map.
+
+1. Click the ``2D Pose Estimate`` button in the RViz menu.
+    <img src="https://github.com/user-attachments/assets/104fa192-a120-41d9-a257-b571130fcf77" width="460" height="70">
+
+
+
+2. Click on the map where the actual robot is located and drag the large green arrow toward the direction where the robot is facing.
+
+3. Repeat step 1 and 2 until the LDS sensor data is overlayed on the saved map.
+
+4. Launch keyboard teleoperation node to precisely locate the robot on the map.
+```
+  $ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+```
+
+5. Move the robot back and forth a bit to collect the surrounding environment information and narrow down the estimated location of the TurtleBot3 on the map which is displayed with tiny green arrows.
+ 
+6. Terminate the keyboard teleoperation node:
+    > Ctrl + C 
+
+   
+### 4. Set Navigation Goal
+
+1. Click the ``2D Nav Goal`` button in the RViz menu.
+    <img src="https://github.com/user-attachments/assets/8b08ea67-8cf3-472f-837a-6c0657f1d60b" width="460" height="70">
+
+2. Click on the map to set the destination of the robot and drag the green arrow toward the direction where the robot will be facing.
+  - This green arrow is a marker that can specify the destination of the robot.
+  - The root of the arrow is x, y coordinate of the destination, and the angle θ is determined by the orientation of the arrow.
+  - As soon as x, y, θ are set, TurtleBot3 will start moving to the destination immediately.
