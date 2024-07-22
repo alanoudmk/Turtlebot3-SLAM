@@ -50,11 +50,10 @@ The Turtlebot3 is a small, lightweight, and affordable robot that can be easily 
 
 
 
-
-
-
-
 ***
+
+
+
 
 # Setup Your Envioremnt
 
@@ -106,10 +105,10 @@ The Turtlebot3 is a small, lightweight, and affordable robot that can be easily 
 
 
 # Gazebo Simulation
-
+The [Gazebo Simulation](https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/#gazebo-simulation) is a powerful tool for TurtleBot3 development and testing, as it allows you to experiment with different algorithms, sensors, and behaviors without the risk of damaging the physical robot or the environment. 
 
 ## 1. Create ROS1 Noetic Workspace:
-> If You have not created it alredy
+If you haven't created the ROS1 Noetic workspace yet, follow these steps:
    
 1. Open a **Terminal** & Source the ROS 1 Noetic: 
    > Ctrl + Alt + T
@@ -183,8 +182,92 @@ Three simulation environments are prepared for TurtleBot3. Please select one of 
   $ roslaunch turtlebot3_gazebo turtlebot3_house.launch
 ```
 
-## Operate TurtleBot3 
+## 4. Operate TurtleBot3 
 Launch the teleoperation node with below command in a new terminal window.
 ```
   $ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 ```
+
+
+
+
+***
+
+
+
+# SLAM Simulation
+When SLAM in Gazebo simulator, you can select or create various environments and robot models in virtual world. 
+Other than preparing simulation environment instead of bringing up the robot, SLAM Simulation is pretty similar to that of SLAM with the actual TurtleBot3.
+
+> The following instructions require prerequisites from the previous sections, so please review to the Gazebo section first.
+
+### 1.Launch Simulation World
+- Three Gazebo environments are prepared, but for creating a map with SLAM, it is recommended to use either ``TurtleBot3 World`` or ``TurtleBot3 House``.
+- Please use the proper keyword among ``burger``, ``waffle``, ``waffle_pi`` for the TURTLEBOT3_MODEL parameter.
+
+```
+  $ export TURTLEBOT3_MODEL=burger
+  $ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+```
+
+### 2. Run SLAM Node
+
+1. Open a **Terminal** & Source the ROS 1 Noetic: 
+   > Ctrl + Alt + T
+```
+  $ source /opt/ros/noetic/setup.bash
+```
+
+2. Run SLAM Node:
+  - Gmapping SLAM method is used by default.
+```
+  $ export TURTLEBOT3_MODEL=burger
+  $ roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
+```
+
+
+### 3. Run Teleoperation Node
+
+1. Open a new **Terminal** & Source the ROS 1 Noetic: 
+   > Ctrl + Alt + T
+```
+  $ source /opt/ros/noetic/setup.bash
+```
+
+2. Run Teleoperation Node:
+```
+  $ export TURTLEBOT3_MODEL=burger
+  $ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+```
+
+3. Control Your TurtleBot3:
+ ---------------------------
+ Moving around:
+        w
+   a    s    d
+        x
+
+ w/x : increase/decrease linear velocity
+ a/d : increase/decrease angular velocity
+ space key, s : force stop
+---------------------------
+ 
+4. To Quit:
+ > CTRL + C
+
+  
+### 3. Save The Map
+When the map is created successfully:
+
+1. Open a **Terminal** & Source the ROS 1 Noetic: 
+   > Ctrl + Alt + T
+```
+  $ source /opt/ros/noetic/setup.bash
+```
+
+2. Save the map:
+```
+  $ rosrun map_server map_saver -f ~/map
+```
+
+> The saved map.pgm file
