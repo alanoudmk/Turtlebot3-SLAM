@@ -107,8 +107,7 @@ The Turtlebot3 is a small, lightweight, and affordable robot that can be easily 
 # Gazebo Simulation
 The [Gazebo Simulation](https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/#gazebo-simulation) is a powerful tool for TurtleBot3 development and testing, as it allows you to experiment with different algorithms, sensors, and behaviors without the risk of damaging the physical robot or the environment. 
 
-## 1. Create ROS1 Noetic Workspace:
-If you haven't created the ROS1 Noetic workspace yet, follow these steps:
+## 1. Create Workspace:
    
 1. Open a **Terminal** & Source the ROS 1 Noetic: 
    > Ctrl + Alt + T
@@ -117,22 +116,21 @@ If you haven't created the ROS1 Noetic workspace yet, follow these steps:
   $ echo $ROS_DISTRO
 ```
   - The output should be "noetic".
-  - Create the Workspace Directory:
+
+2. Create the Workspace Directory & Source Folder:
 ```
   $ cd
-  $ mkdir catkin_ws
+  $ mkdir -p ~/my_turtlebot_ws/src
 ```
 
-2. Create The Source Folder & Build the Workspace:  
+2. Create The & Build the Workspace:  
 
   ```
-    $ cd catkin_ws/
-    $ mkdir src
     $ catkin_make
     $ source devel/setup.bash
   ```
 
-3. Source Catkin Workspace: 
+4. Source Catkin Workspace: 
 
  ```
    $ cd devel/
@@ -147,9 +145,9 @@ The TurtleBot3 Simulation Package requires ``turtlebot3`` and ``turtlebot3_msgs`
 > Note: Without these prerequisite packages, the Simulation cannot be launched.
 
 ```
-  $ cd ~/catkin_ws/src/
+  $ cd ~/my_turtlebot_ws/src/
   $ git clone -b noetic-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
-  $ cd ~/catkin_ws && catkin_make
+  $ cd ~/my_turtlebot_ws && catkin_make
 ```
 ***
 
