@@ -220,6 +220,10 @@ Other than preparing simulation environment instead of bringing up the robot, SL
   $ roslaunch turtlebot3_gazebo turtlebot3_world.launch
 ```
 
+   <img src="https://github.com/user-attachments/assets/5b445a07-0b50-4121-aac5-edc8c683ce70" width="430" height="230">
+
+
+
 ### 2. Run SLAM Node
 
 1. Open a **Terminal** & Source the ROS 1 Noetic: 
@@ -234,6 +238,9 @@ Other than preparing simulation environment instead of bringing up the robot, SL
   $ export TURTLEBOT3_MODEL=burger
   $ roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
 ```
+
+   <img src="https://github.com/user-attachments/assets/cb4fcf75-c0e3-426b-bd96-aec636dd0fcd" width="430" height="230">
+
 
 
 ### 3. Run Teleoperation Node
@@ -251,14 +258,10 @@ Other than preparing simulation environment instead of bringing up the robot, SL
 ```
 
 3. Control Your TurtleBot3:
- ---------------------------
- Moving around:
+The key mapping is as follows:
 
+   <img src="https://github.com/user-attachments/assets/76cde1bc-161f-4103-9ffd-43e7a9f90da7" width="230" height="80">
 
-- w/x : increase/decrease linear velocity
-- a/d : increase/decrease angular velocity
-- space key, s : force stop
----------------------------
  
 4. To Quit:
  > CTRL + C
@@ -325,6 +328,7 @@ Proper map has to be prepared before running the Navigation. Other than preparin
   - TurtleBot3 has to be correctly located on the map with the LDS sensor data that neatly overlaps the displayed map.
 
 1. Click the ``2D Pose Estimate`` button in the RViz menu.
+   
     <img src="https://github.com/user-attachments/assets/104fa192-a120-41d9-a257-b571130fcf77" width="460" height="70">
 
 
@@ -347,6 +351,7 @@ Proper map has to be prepared before running the Navigation. Other than preparin
 ### 4. Set Navigation Goal
 
 1. Click the ``2D Nav Goal`` button in the RViz menu.
+   
     <img src="https://github.com/user-attachments/assets/8b08ea67-8cf3-472f-837a-6c0657f1d60b" width="460" height="70">
 
 2. Click on the map to set the destination of the robot and drag the green arrow toward the direction where the robot will be facing.
