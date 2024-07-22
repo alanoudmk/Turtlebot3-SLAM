@@ -196,7 +196,7 @@ Launch the teleoperation node with below command in a new terminal window.
 
 
 # SLAM Simulation
-When SLAM in Gazebo simulator, you can select or create various environments and robot models in virtual world. 
+When [SLAM in Gazebo](https://emanual.robotis.com/docs/en/platform/turtlebot3/slam_simulation/) simulator, you can select or create various environments and robot models in virtual world. 
 Other than preparing simulation environment instead of bringing up the robot, SLAM Simulation is pretty similar to that of SLAM with the actual TurtleBot3.
 
 > The following instructions require prerequisites from the previous sections, so please review to the Gazebo section first.
@@ -243,20 +243,18 @@ Other than preparing simulation environment instead of bringing up the robot, SL
 3. Control Your TurtleBot3:
  ---------------------------
  Moving around:
-        w
-   a    s    d
-        x
 
- w/x : increase/decrease linear velocity
- a/d : increase/decrease angular velocity
- space key, s : force stop
+
+- w/x : increase/decrease linear velocity
+- a/d : increase/decrease angular velocity
+- space key, s : force stop
 ---------------------------
  
 4. To Quit:
  > CTRL + C
 
   
-### 3. Save The Map
+### 4. Save The Map
 When the map is created successfully:
 
 1. Open a **Terminal** & Source the ROS 1 Noetic: 
