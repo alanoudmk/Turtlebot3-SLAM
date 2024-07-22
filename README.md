@@ -198,6 +198,8 @@ Launch the teleoperation node with below command in a new terminal window.
 
 
 
+https://github.com/user-attachments/assets/eb6553bd-95f9-48db-88dc-9ffb4fac21e1
+
 
 ***
 
