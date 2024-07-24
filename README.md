@@ -301,8 +301,8 @@ Proper map has to be prepared before running the Navigation. Other than preparin
  - Please use the proper keyword among ``burger``, ``waffle``, ``waffle_pi`` for the TURTLEBOT3_MODEL parameter.
  
 ```
-  $	source /opt/ros/noetic/setup.bash
- 	$ source ~/my_turtlebot_ws/devel/setup.bash
+  $ source /opt/ros/noetic/setup.bash
+  $ source ~/my_turtlebot_ws/devel/setup.bash
   $ export TURTLEBOT3_MODEL=burger
   $ roslaunch turtlebot3_gazebo turtlebot3_world.launch
 ```
