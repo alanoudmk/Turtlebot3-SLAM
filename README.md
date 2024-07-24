@@ -211,7 +211,7 @@ Other than preparing simulation environment instead of bringing up the robot, SL
 
 > The following instructions require prerequisites from the previous sections, so please review to the Gazebo section first.
 
-### 1.Launch Simulation World
+### 1. Launch Simulation World
 - Three Gazebo environments are prepared, but for creating a map with SLAM, it is recommended to use either ``TurtleBot3 World`` or ``TurtleBot3 House``.
 - Please use the proper keyword among ``burger``, ``waffle``, ``waffle_pi`` for the TURTLEBOT3_MODEL parameter.
 
@@ -362,3 +362,10 @@ Proper map has to be prepared before running the Navigation. Other than preparin
   - This green arrow is a marker that can specify the destination of the robot.
   - The root of the arrow is x, y coordinate of the destination, and the angle θ is determined by the orientation of the arrow.
   - As soon as x, y, θ are set, TurtleBot3 will start moving to the destination immediately.
+
+
+    <img src="https://github.com/user-attachments/assets/1bad8ca6-3778-4c4b-9943-368bc716aadc" width="210" height="160">
+
+
+
+    <img src="https://github.com/user-attachments/assets/ece48282-8133-4643-90ef-6d1ba64bd580" width="250" height="160">
