@@ -303,6 +303,7 @@ Proper map has to be prepared before running the Navigation. Other than preparin
 ```
   $ source /opt/ros/noetic/setup.bash
   $ source ~/my_turtlebot_ws/devel/setup.bash
+  $ cd  my_turtlebot_ws/
   $ export TURTLEBOT3_MODEL=burger
   $ roslaunch turtlebot3_gazebo turtlebot3_world.launch
 ```
