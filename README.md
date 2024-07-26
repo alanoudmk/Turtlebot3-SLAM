@@ -7,7 +7,7 @@ Enviorment:
   - ROS Distro: Noetic 20.04
   - OS  Version: Ubuntu 20.04.6
   - [Turtlebot3](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/) Robot.
-  - Using Gazibo Simulation
+  - Using RViz & Gazibo Simulation
 
 
 
